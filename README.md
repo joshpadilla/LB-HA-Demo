@@ -3,7 +3,7 @@ A load balancing and high availability demo on Packet bare metal servers. This t
 
 ![LB-HA](/images/LB-HA.png)
 
-To run this demo, you will need to have the Terraform installed. The following commands will deploy the full cluster:
+To run this demo, you will need to have Terraform installed. The following commands will deploy the full cluster:
 
 ```bash
 terraform init
