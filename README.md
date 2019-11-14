@@ -10,4 +10,4 @@ terraform init
 terraform apply
 ```
 
-If you're interesting in manually deploying this cluster, we have a guide on how to do so here.
+If you're interesting in manually deploying this cluster, we have a guide on how to do so [here](https://github.com/packethost/docs/blob/master/guides/load-balancing-and-high-availability.md).
