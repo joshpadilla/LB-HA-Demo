@@ -9,9 +9,9 @@ data "template_file" "script1" {
 }
 
 # Create webservers
-resource "packet_device" "webservers" {
+resource "metal_device" "webservers" {
   count = "${var.webserver_count}"
-  project_id       = "${packet_project.LB-HA.id}"
+  project_id       = "${metal_project.LB-HA.id}"
   facilities       = "${var.facilities}"
   plan             = "${var.node_plan}"
   hostname         = "${format("%s-%d","webserver", count.index+1)}"
@@ -22,10 +22,10 @@ resource "packet_device" "webservers" {
 }
 
 # Attach webservers to the VLAN
-resource "packet_port_vlan_attachment" "webservers-attach" {
-  depends_on = [packet_device.webservers]
+resource "metal_port_vlan_attachment" "webservers-attach" {
+  depends_on = [metal_device.webservers]
   count = "${var.webserver_count}"
-  device_id = "${packet_device.webservers.*.id[count.index]}"
+  device_id = "${metal_device.webservers.*.id[count.index]}"
   port_name = "bond0"
-  vlan_vnid = "${packet_vlan.vlan1.vxlan}"
+  vlan_vnid = "${metal_vlan.vlan1.vxlan}"
 }

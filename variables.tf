@@ -1,5 +1,5 @@
 variable "auth_token" {
-  description = "Your Packet API key"
+  description = "Your Equinix Metal API key"
 }
 
 variable "facilities" {

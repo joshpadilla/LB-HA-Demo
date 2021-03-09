@@ -1,5 +1,4 @@
-# Your Packet API token and facility of choice
-auth_token = "PACKET_API_TOKEN"
+metal_auth_token = "EQUINIX_METAL_API_TOKEN"
 facilities = ["ewr1"]
 
 # Server type, this demo requires servers with bonded LACP networking (2x 10 Gbps ports).
